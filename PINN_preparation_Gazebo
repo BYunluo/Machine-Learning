@@ -1,4 +1,4 @@
-About this week's PINN work:
+About this week's PINN work:（Processing_2）
 	This week's PINN mainly tackles basic control work in Gazebo, and does not involve neural network development for the time being. Because our project needs to control turtlebot3's attitude by torque, but Gazebo defaults don't provide a way for torque control (the usual Turtlebot3 control is done via robot Linear velocity and Angular velocity)
 
 (1) So I chose to call the ROS2 service /apply_joint_effort for moment control. Also since the velocity masking effect of the libgazebo_ros_diff_drive.so plugin overrides the moment effect, I commented out the relevant part of this plugin in the sdf file for turtlebot3_burger. This will ensure the normal moment effect process.
